@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAG NETWORK - Minecraft Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-blue: #2442FF;
+            --primary-blue-dark: #0026e6;
+            --dark-blue: #0a1527;
+            --darker-blue: #060d1a;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-dark: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header and Navigation */
+        .navbar {
+            background-color: var(--primary-blue);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .search-container {
+            flex: 0 1 500px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            border-radius: 9999px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--dark-blue);
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title .blue {
+            color: var(--primary-blue);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            background-color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-img {
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 10px solid var(--white);
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 2rem;
+            margin: 2rem;
+            border-radius: 20px;
+            background-color: var(--dark-blue);
+        }
+
+        .section-container {
+            display: flex;
+            max-width: 1280px;
+            margin: 0 auto;
+            gap: 3rem;
+        }
+
+        .section-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background-color: #333;
+            min-height: 400px;
+        }
+
+        .section-content {
+            flex: 1;
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: rgba(131, 129, 129, 0.567);
+            /* Added this line */
+        }
+
+        .section-title .blue {
+            color: var(--primary-blue);
+            /* Keep your blue accent */
+        }
+
+        .star-icon {
+            color: white;
+            /* Changed from #000 to white */
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: rgba(104, 96, 96, 0.344);
+        }
+
+        .offer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-list {
+            list-style: none;
+        }
+
+        .offer-item {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .offer-highlight {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .choose-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Server Section */
+        .server-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .server-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .server-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .server-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .server-icon i {
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+        }
+
+        .server-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .server-description {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .server-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .server-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .server-stat-value {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+        }
+
+        .server-stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-blue-dark);
+        }
+
+        /* Admin Section */
+        .admin-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .admin-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+
+        .admin-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .admin-role {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .admin-bio {
+            color: #4b5563;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .admin-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .admin-social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .admin-social-link:hover {
+            background-color: var(--primary-blue);
+        }
+
+        .admin-social-link:hover i {
+            color: var(--white);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--darker-blue);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo .logo-img {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+        }
+
+        .footer-logo .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-logo-text {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .footer-heading {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .footer-link a:hover {
+            color: var(--white);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .footer-social-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .hero-img {
+                width: 350px;
+                height: 350px;
+            }
+
+            .section-container {
+                flex-direction: column;
+            }
+
+            .section-image {
+                order: 2;
+            }
+
+            .section-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+
+            .search-container {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-link span {
+                display: none;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 3rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-img {
+                width: 300px;
+                height: 300px;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+                margin: 1rem;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .hero-img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .offer-title,
+            .choose-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-img">
+                <img src="images/mag.png" alt="MAG NETWORK Logo">
+            </div>
+            <div class="logo-text">MAG NETWORK</div>
+        </div>
+
+        <div class="search-container">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" class="search-input" placeholder="Quick find">
+        </div>
+
+        <div class="nav-links">
+            <a href="#" class="nav-link">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#about" class="nav-link">
+                <i data-lucide="users"></i>
+                <span>About</span>
+            </a>
+            <a href="#server" class="nav-link">
+                <i data-lucide="server"></i>
+                <span>server</span>
+            </a>
+            <a href="#contact" class="nav-link">
+                <i data-lucide="message-circle"></i>
+                <span>contact</span>
+            </a>
+            <a href="#admin" class="nav-link">
+                <i data-lucide="shield"></i>
+                <span>Admin</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="blue">M</span>AG <span class="blue">N</span>ETWORK
+                </h1>
+                <h2 class="hero-subtitle">MAG Minecraft Community</h2>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i data-lucide="youtube" style="color: #FF0000; width: 24px; height: 24px;"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i data-lucide="instagram" style="color: #E1306C; width: 24px; height: 24px;"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i data-lucide="message-square" style="color: #5865F2; width: 24px; height: 24px;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-img">
+                    <img src="images/mag.png" alt="MAG NETWORK Community">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-container">
+            <div class="section-image">
+                <div class="section-img">
+                    <!-- About image will be added by user -->
+                </div>
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">
+                    <i data-lucide="star" class="star-icon"></i>
+                    About <span class="blue">Us</span>
+                    <i data-lucide="star" class="star-icon"></i>
+                </h2>
+                <p class="section-description">
+                    <strong>MAG NETWORK</strong> is a thriving Minecraft server, owned and operated by Mallu Arena
+                    Gaming. We're currently in our exciting Season 8, offering a unique blend of anarchy and modded SMP
+                    gameplay.
+                </p>
+
+                <h3 class="offer-title">What We Offer:</h3>
+                <ul class="offer-list">
+                    <li class="offer-item">
+                        <i data-lucide="check-circle" style="color: var(--primary-blue); min-width: 24px;"></i>
+                        <div>
+                            <span class="offer-highlight">Anarchy and Modded SMP:</span> Experience the thrill of
+                            unrestricted gameplay in our anarchy mode, or dive into the depths of our modded SMP with a
+                            wide range of enhancements.
+                        </div>
+                    </li>
+                    <li class="offer-item">
+                        <i data-lucide="check-circle" style="color: var(--primary-blue); min-width: 24px;"></i>
+                        <div>
+                            <span class="offer-highlight">Weekly Events:</span> Join us for a variety of exciting events
+                            held every week. From PvP tournaments to creative challenges, there's always something new
+                            to experience.
+                        </div>
+                    </li>
+                    <li class="offer-item">
+                        <i data-lucide="check-circle" style="color: var(--primary-blue); min-width: 24px;"></i>
+                        <div>
+                            <span class="offer-highlight">A Strong Community:</span> Connect with fellow Minecraft
+                            enthusiasts and forge lasting friendships in our vibrant community.
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="choose-title">Why Choose MAG NETWORK?</h3>
+                <ul class="offer-list">
+                    <li class="offer-item">
+                        <i data-lucide="check-circle" style="color: var(--primary-blue); min-width: 24px;"></i>
+                        <div>
+                            <span class="offer-highlight">Unparalleled Freedom:</span> Enjoy the freedom to do whatever
+                            you want in our server, without any restrictions.
+                        </div>
+                    </li>
+                    <li class="offer-item">
+                        <i data-lucide="check-circle" style="color: var(--primary-blue); min-width: 24px;"></i>
+                        <div>
+                            <span class="offer-highlight">Active Staff:</span> Our dedicated team ensures a smooth
+                            gaming experience and is always ready to assist you.
+                        </div>
+                    </li>
+                    <li class="offer-item">
+                        <i data-lucide="check-circle" style="color: var(--primary-blue); min-width: 24px;"></i>
+                        <div>
+                            <span class="offer-highlight">Regular Updates:</span> We constantly update our server with
+                            new features and improvements based on community feedback.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Server Section -->
+    <section id="server" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i data-lucide="server" class="star-icon"></i>
+                Our <span class="blue">Servers</span>
+                <i data-lucide="server" class="star-icon"></i>
+            </h2>
+            <p class="section-description" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                Explore our diverse range of Minecraft servers, each offering a unique gameplay experience. From
+                unrestricted anarchy to carefully modded SMP, we have something for every type of player.
+            </p>
+
+            <div class="server-grid">
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i data-lucide="swords"></i>
+                    </div>
+                    <h3 class="server-title">Anarchy Server</h3>
+                    <p class="server-description">
+                        Experience true freedom with no rules or restrictions. Build, destroy, and conquer in this
+                        lawless Minecraft world.
+                    </p>
+                    <div class="server-info">
+                        <div class="server-stat">
+                            <span class="server-stat-value">24/7</span>
+                            <span class="server-stat-label">Uptime</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="server-stat-value">100+</span>
+                            <span class="server-stat-label">Players</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="server-stat-value">1.19.2</span>
+                            <span class="server-stat-label">Version</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i data-lucide="hammer"></i>
+                    </div>
+                    <h3 class="server-title">Modded SMP</h3>
+                    <p class="server-description">
+                        Dive into a carefully curated selection of mods that enhance your survival multiplayer
+                        experience without overwhelming you.
+                    </p>
+                    <div class="server-info">
+                        <div class="server-stat">
+                            <span class="server-stat-value">24/7</span>
+                            <span class="server-stat-label">Uptime</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="server-stat-value">150+</span>
+                            <span class="server-stat-label">Players</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="server-stat-value">1.18.2</span>
+                            <span class="server-stat-label">Version</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-card">
+                    <div class="server-icon">
+                        <i data-lucide="palette"></i>
+                    </div>
+                    <h3 class="server-title">Creative Server</h3>
+                    <p class="server-description">
+                        Let your imagination run wild with unlimited resources and powerful world-editing tools in our
+                        creative server.
+                    </p>
+                    <div class="server-info">
+                        <div class="server-stat">
+                            <span class="server-stat-value">24/7</span>
+                            <span class="server-stat-label">Uptime</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="server-stat-value">80+</span>
+                            <span class="server-stat-label">Players</span>
+                        </div>
+                        <div class="server-stat">
+                            <span class="server-stat-value">1.21.5</span>
+                            <span class="server-stat-label">Version</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i data-lucide="message-circle" class="star-icon"></i>
+                Contact <span class="blue">Us</span>
+                <i data-lucide="message-circle" class="star-icon"></i>
+            </h2>
+            <p class="section-description" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                Have questions or suggestions? We'd love to hear from you! Fill out the form below and our team will get
+                back to you as soon as possible.
+            </p>
+
+            <div class="section-content" style="max-width: 800px; margin: 0 auto;">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="discord" class="form-label">Discord Username</label>
+                        <input type="text" id="discord" class="form-input" placeholder="Your Discord username">
+                    </div>
+                    <div class="form-group full">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Your message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <i data-lucide="shield" class="star-icon"></i>
+                Our <span class="blue">Team</span>
+                <i data-lucide="shield" class="star-icon"></i>
+            </h2>
+            <p class="section-description" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                Meet the dedicated team behind MAG NETWORK. Our administrators and moderators work tirelessly to ensure
+                the best possible experience for our community.
+            </p>
+
+            <div class="admin-cards">
+                <div class="admin-card">
+                    <div class="admin-avatar">
+                        <!-- Admin avatar will be added by user -->
+                    </div>
+                    <h3 class="admin-name">MalluGamer</h3>
+                    <p class="admin-role">Owner & Founder</p>
+                    <p class="admin-bio">
+                        Passionate Minecraft player with over 8 years of server management experience. Created MAG
+                        NETWORK to build a welcoming community for all players.
+                    </p>
+                    <div class="admin-social">
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="youtube" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="instagram" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="twitter" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-avatar">
+                        <!-- Admin avatar will be added by user -->
+                    </div>
+                    <h3 class="admin-name">CraftMaster</h3>
+                    <p class="admin-role">Head Administrator</p>
+                    <p class="admin-bio">
+                        Technical expert who manages server infrastructure and ensures smooth gameplay. Always ready to
+                        help with technical issues.
+                    </p>
+                    <div class="admin-social">
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="youtube" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="instagram" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="twitter" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-avatar">
+                        <!-- Admin avatar will be added by user -->
+                    </div>
+                    <h3 class="admin-name">BlockBuilder</h3>
+                    <p class="admin-role">Community Manager</p>
+                    <p class="admin-bio">
+                        Organizes events and manages community engagement. Known for creating exciting tournaments and
+                        building challenges.
+                    </p>
+                    <div class="admin-social">
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="youtube" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="instagram" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="twitter" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-avatar">
+                        <!-- Admin avatar will be added by user -->
+                    </div>
+                    <h3 class="admin-name">PixelPro</h3>
+                    <p class="admin-role">Moderator</p>
+                    <p class="admin-bio">
+                        Ensures server rules are followed and helps new players get started. Always friendly and ready
+                        to assist with any questions.
+                    </p>
+                    <div class="admin-social">
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="youtube" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="instagram" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                        <a href="#" class="admin-social-link">
+                            <i data-lucide="twitter" style="width: 18px; height: 18px; color: #666;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">
+                    <div class="logo-img">
+                        <img src="images/mag.png" alt="MAG NETWORK Logo">
+                    </div>
+                    <span class="footer-logo-text">MAG NETWORK</span>
+                </div>
+                <p class="footer-description">
+                    Your ultimate Minecraft community with 24/7 server access, exciting game modes, and a vibrant
+                    Discord group. Join us to experience gaming at its finest.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link">
+                        <i data-lucide="youtube" style="color: #fff; width: 20px; height: 20px;"></i>
+                    </a>
+                    <a href="#" class="footer-social-link">
+                        <i data-lucide="instagram" style="color: #fff; width: 20px; height: 20px;"></i>
+                    </a>
+                    <a href="#" class="footer-social-link">
